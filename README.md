@@ -76,6 +76,34 @@ g++ -O2 -std=c++17 tools_cgns/gen_delta_cgns.cpp \
 ./tools_cgns/gen_delta_cgns delta.fmt delta_cgns.inp delta.cgns
 ```
 
+### Tools — grid preprocessors (ronnie, maggie)
+
+`tools/` holds C++ translations of two CFL3D grid-preprocessing utilities. Each
+ships its own test case (reference inputs + gfortran goldens) and a
+self-contained verify script, so you can reproduce the validation from a fresh
+clone with nothing but `g++`:
+
+| Tool | Role | Verified output |
+|------|------|-----------------|
+| **ronnie** | generalized patched-grid (chimera) connectivity preprocessor | `patch.bin` + `ronnie.out` **byte-exact** vs Fortran |
+| **maggie** | overset hole-cutting / interpolation-stencil preprocessor | `ovrlp.bin` **byte-exact** vs Fortran |
+
+```sh
+bash tools/ronnie/build_verify.sh
+#   compiles, runs the bundled case, byte-compares -> "RESULT: BYTE-EXACT MATCH"
+
+bash tools/maggie/build_verify.sh
+#   -> "RESULT: PASS (binary output byte-exact vs Fortran reference)"
+```
+
+Each script compiles the port with `g++ -std=c++17`, runs it on the bundled case
+in a fresh `run/` sandbox, and byte-compares the result against the gfortran
+reference. (maggie's text log also matches, except two "maximum deviation" lines
+print the value `0.0` in a different float format — numerically identical.) To
+run a tool by hand: `g++ -std=c++17 -O2 tools/ronnie/cpp/*.cpp -o ronnie` then
+`./ronnie < tools/ronnie/ref/ronnie.inp` in a directory holding the input
+`grid.bin`.
+
 ### Layout
 
 Sources are grouped by function under `src/<category>/`, each `foo.cpp` next to
@@ -165,6 +193,29 @@ g++ -O2 -std=c++17 tools_cgns/gen_delta_cgns.cpp \
     -I/opt/homebrew/include -L/opt/homebrew/lib -lcgns -o tools_cgns/gen_delta_cgns
 ./tools_cgns/gen_delta_cgns delta.fmt delta_cgns.inp delta.cgns
 ```
+
+### 工具 —— 网格预处理器（ronnie、maggie）
+
+`tools/` 收录了 CFL3D 两个网格预处理工具的 C++ 翻译。每个都自带测试算例（参考输入 +
+gfortran 金标准输出）和一个自包含的验证脚本，克隆下来只需 `g++` 即可复现验证：
+
+| 工具 | 作用 | 已验证输出 |
+|------|------|-----------|
+| **ronnie** | 通用拼接网格（chimera）连通性预处理器 | `patch.bin` + `ronnie.out` 与 Fortran **字节完全一致** |
+| **maggie** | 重叠网格挖洞 / 插值模板预处理器 | `ovrlp.bin` 与 Fortran **字节完全一致** |
+
+```sh
+bash tools/ronnie/build_verify.sh
+#   编译、跑算例、字节对比 -> "RESULT: BYTE-EXACT MATCH"
+
+bash tools/maggie/build_verify.sh
+#   -> "RESULT: PASS (binary output byte-exact vs Fortran reference)"
+```
+
+每个脚本用 `g++ -std=c++17` 编译、在全新的 `run/` 沙箱里跑算例、再与 gfortran 参考做字节对比。
+（maggie 的文本日志也一致，只有两行 "maximum deviation" 把数值 `0.0` 用不同浮点格式打印 ——
+数值上完全相同。）手动运行:`g++ -std=c++17 -O2 tools/ronnie/cpp/*.cpp -o ronnie`,
+然后在放有输入 `grid.bin` 的目录里 `./ronnie < tools/ronnie/ref/ronnie.inp`。
 
 ### 目录结构
 
@@ -256,6 +307,31 @@ g++ -O2 -std=c++17 tools_cgns/gen_delta_cgns.cpp \
     -I/opt/homebrew/include -L/opt/homebrew/lib -lcgns -o tools_cgns/gen_delta_cgns
 ./tools_cgns/gen_delta_cgns delta.fmt delta_cgns.inp delta.cgns
 ```
+
+### 도구 — 격자 전처리기 (ronnie, maggie)
+
+`tools/` 에는 CFL3D 의 격자 전처리 유틸리티 두 개의 C++ 번역이 들어 있습니다. 각각 자체
+테스트 케이스(참조 입력 + gfortran 골든 출력)와 자체 완결형 검증 스크립트를 포함하므로,
+새로 clone 한 뒤 `g++` 만으로 검증을 재현할 수 있습니다:
+
+| 도구 | 역할 | 검증된 출력 |
+|------|------|------------|
+| **ronnie** | 일반 패치 격자(chimera) 연결성 전처리기 | `patch.bin` + `ronnie.out` 이 Fortran 과 **바이트 단위 완전 일치** |
+| **maggie** | 중첩 격자 홀 커팅 / 보간 스텐실 전처리기 | `ovrlp.bin` 이 Fortran 과 **바이트 단위 완전 일치** |
+
+```sh
+bash tools/ronnie/build_verify.sh
+#   컴파일·케이스 실행·바이트 비교 -> "RESULT: BYTE-EXACT MATCH"
+
+bash tools/maggie/build_verify.sh
+#   -> "RESULT: PASS (binary output byte-exact vs Fortran reference)"
+```
+
+각 스크립트는 `g++ -std=c++17` 로 컴파일하고, 새 `run/` 샌드박스에서 케이스를 실행한 뒤
+gfortran 참조와 바이트 단위로 비교합니다. (maggie 의 텍스트 로그도 일치하며, 두 개의
+"maximum deviation" 줄만 값 `0.0` 을 다른 부동소수점 형식으로 출력합니다 — 수치적으로 동일.)
+수동 실행: `g++ -std=c++17 -O2 tools/ronnie/cpp/*.cpp -o ronnie` 후, 입력 `grid.bin` 이
+있는 디렉터리에서 `./ronnie < tools/ronnie/ref/ronnie.inp`.
 
 ### 디렉터리 구조
 

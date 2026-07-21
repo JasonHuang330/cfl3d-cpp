@@ -1,0 +1,34 @@
+comment line skipped by main read(5,*)
+grid.bin
+maggie.out
+ovrlp.bin
+plt3d.bin
+title: tiny 2-grid overset test case
+header nmesh iplt3d
+         2         0
+header dims
+         9         9         2         0         1         0
+         7         7         2         1         0         1
+header search range
+         0         0         0         0         0         0
+         0         0         0         0         0         0
+header hole definition
+header mesh holeno ihbtyp
+         1         1         0         1
+header jh1 jh2 ...
+         2         1         7         1         7         1         1
+header search list fringe1
+header search list fringe2
+         1         2
+header problem pt1
+header problem pt2
+         2         0
+header outer bnd1
+header outer bnd2
+         2         1         6         6         7         1         1
+header search list outer1
+header search list outer2
+         1         1
+header problem pt outer1
+header problem pt outer2
+         2         0

@@ -1,0 +1,142 @@
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * *                                                               * *
+ * *           RONNIE - CFL3D PATCHED-GRID PREPROCESSOR            * *
+ * *                                                               * *
+ * *   VERSION 6.7 :  Computational Fluids Lab, Mail Stop 128,     * *
+ * *                  NASA Langley Research Center, Hampton, VA    * *
+ * *                  Release Date:  February  1, 2017.            * *
+ * *                                                               * *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+ memory allocation:     0.007240 Mbytes, single precision
+
+input/output files:
+  grid.bin                                                    
+  ronnie.out                                                  
+  patch.bin                                                   
+
+ioflag    itrace
+     0        -1
+
+title
+  Two-block coincident j-interface patch test case for ronnie translation         
+
+grid/level data
+ ngrid
+     2
+   ncg   iem  idim  jdim  kdim
+     0     0     4     5     4
+     0     0     4     5     4
+
+patch input data
+ ninter
+     2
+   int iifit    limit    itmax    mcxie    mceta      c-0    iorph
+     1     1        5       20        0        0        0        0
+     2     1        5       20        0        0        0        0
+   int    to  xie1  xie2  eta1  eta2   nfb  from  from  from  from   ...
+     1   221        1        4        1        4        1
+         122        1        4        1        4
+     2   122        1        4        1        4        1
+         221        1        4        1        4
+
+ SUMMARY BY GRIDS
+   grid  level  block   jdim   kdim   idim   grid pts.
+      1      1      1      5      4      4          80
+      2      1      2      5      4      4          80
+
+                                     TOTAL         160
+
+ SUMMARY BY LEVELS
+  level   grid  block
+      1      1      1
+      1      2      2
+
+
+ level of coarsest global mesh=  1
+ level of finest global mesh  =  1
+
+ SUMMARY OF GRID SEQUENCES
+ sequence  starting level    ending level
+        1               1               1
+
+ READING IN GRIDS
+
+ reading grid  1 of dimensions (I/J/K) :    4    5    4
+
+ reading grid  2 of dimensions (I/J/K) :    4    5    4
+
+
+ BEGINNING GENERALIZED-COORDINATE INTERPOLATION
+
+
+ generalized coordinate interpolation number   2
+ interpolation from surface j =  1 of block  2  (k:   1 to   4, i:   1 to   4)
+                 to surface j =  5 of block  1  (k:   1 to   4, i:   1 to   4)
+
+ note: j and k referred to below are indicies local to the patch surface
+    checking for collapsed grid lines on  "to"  side in block   1
+    checking for collapsed grid lines on "from" side in block   2
+    checking for branch cuts on "from" side in block   2
+    expanding grid boundaries on "from" side in block   2
+     beginning inversion for xie, eta of cell centers
+       using bi-linear fit
+     beginning check of boundary values
+       eta=0 boundaries not rendered coincident
+       xie=0 boundaries not rendered coincident
+     beginning diagnostic checks
+        0 points were found outside the legal range of xie
+        0 points were found outside the legal range of eta
+        0 non-unique points were found in the generalized-coordinate
+       mapping between the "to" and "from" grids
+        0 interpolated cell centers differ by more than  10 percent
+          from those obtained directly from the grid points
+          the max. difference  0.167E-13 percent occurs at j,k =    2,   1
+        0 normals at interpolated cell centers differ by more than  10 percent
+         from the normals at cell centers obtained directly from grid points
+       the max. difference  0.000E+00 percent occurs at j,k =    1,   1
+       the average inner product over the interface is  0.100E+01
+
+
+ generalized coordinate interpolation number   1
+ interpolation from surface j =  5 of block  1  (k:   1 to   4, i:   1 to   4)
+                 to surface j =  1 of block  2  (k:   1 to   4, i:   1 to   4)
+
+ note: j and k referred to below are indicies local to the patch surface
+    checking for collapsed grid lines on  "to"  side in block   2
+    checking for collapsed grid lines on "from" side in block   1
+    checking for branch cuts on "from" side in block   1
+    expanding grid boundaries on "from" side in block   1
+     beginning inversion for xie, eta of cell centers
+       using bi-linear fit
+     beginning check of boundary values
+       eta=0 boundaries not rendered coincident
+       xie=0 boundaries not rendered coincident
+     beginning diagnostic checks
+        0 points were found outside the legal range of xie
+        0 points were found outside the legal range of eta
+        0 non-unique points were found in the generalized-coordinate
+       mapping between the "to" and "from" grids
+        0 interpolated cell centers differ by more than  10 percent
+          from those obtained directly from the grid points
+          the max. difference  0.167E-13 percent occurs at j,k =    2,   1
+        0 normals at interpolated cell centers differ by more than  10 percent
+         from the normals at cell centers obtained directly from grid points
+       the max. difference  0.000E+00 percent occurs at j,k =    1,   1
+       the average inner product over the interface is  0.100E+01
+
+  writing connectivity file:
+  patch.bin                                                   
+
+  minimum dimension for parameter MAXXE in CFL3D:    18
+
+    timing for complete run - time in seconds     
+
+   node      user    system     total    wall clock
+      0      0.00      0.00      0.00        0.00
+ ------------------------------------
+ total:      0.00      0.00      0.00
+
+ total run (wall) time =    0 hours    0 minutes    0 seconds

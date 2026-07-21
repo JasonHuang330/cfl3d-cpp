@@ -1,0 +1,20 @@
+INPUT/OUTPUT FILES
+grid.bin
+ronnie.out
+patch.bin
+IOFLAG  ITRACE
+0       -1
+Two-block coincident j-interface patch test case for ronnie translation
+NGRID
+2
+NCG  IEM IDIM JDIM KDIM
+0    0    4    5    4
+0    0    4    5    4
+NINTER
+2
+ INT  IIFIT LLIMIT ITMAX MCXIE MCETA IC0 IORPH
+   1      1      5    20     0     0   0     0
+   2      1      5    20     0     0   0     0
+ INT   TO   XIE1  XIE2  ETA1  ETA2  NFB  FROM
+   1  0221      0     0     0     0    1  0122
+   2  0122      0     0     0     0    1  0221

@@ -1,0 +1,164 @@
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * *                                                               * *
+ * *           MAGGIE - CFL3D OVERSET-GRID PREPROCESSOR            * *
+ * *                                                               * *
+ * *   VERSION 6.7 :  Computational Fluids Lab, Mail Stop 128,     * *
+ * *                  NASA Langley Research Center, Hampton, VA    * *
+ * *                  Release Date:  February  1, 2017.            * *
+ * *                                                               * *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+input/output files:
+  grid.bin                                                    
+  maggie.out                                                  
+  ovrlp.bin                                                   
+  plt3d.bin                                                   
+
+ title: tiny 2-grid overset test case                                            
+     nmesh    iplt3d
+         2         0
+      jmax      kmax      lmax     noutr     nhole    nobtyp
+         9         9         2         0         1         0
+         7         7         2         1         0         1
+      jsrs      jsre      ksrs      ksre      lsrs      lsre
+         1         8         1         8         1         1
+         1         6         1         6         1         1
+ hole definition:
+      mesh  hole no. ihbtyp(1) ihbtyp(2) ihbtyp(3) ihbtyp(4) ihbtyp(5)
+         1         1         0         1
+     imesh       jh1       jh2       kh1       kh2       lh1       lh2
+         2         1         7         1         7         1         1
+      search list for associated fringe points:
+     nlist    lst(1)    lst(2)    lst(3)    lst(4)    ...  nlist
+         1         2
+      problem point options:
+     iorph     ihole
+         2         0
+ definition of outer boundary points (cell center)to be interpolated:
+      mesh       jo1       jo2       ko1       ko2       lo1       lo2
+         2         1         6         6         7         1         1
+    search list for outer boundary points:
+     nlist    lst(1)    lst(2)    lst(3)    lst(4)    ...  nlist
+         1         1
+      problem point options:
+     iorph     ihole
+         2         0
+
+   *** beginning checks to identify branch cuts ***
+
+     checking mesh            1  for branch cuts on boundaries
+       no branch cuts detected in this mesh
+
+     checking mesh            2  for branch cuts on boundaries
+       no branch cuts detected in this mesh
+
+
+   *** beginning hole construction for mesh            1  ***
+
+     creating hole            1  in mesh            1  using            1  coordinate surfaces
+       coordinate surface number            1 ...from mesh            2
+       ......jh1,jh2,kh1,kh2,lh1,lh2 =            1           7           1           7           1           1
+
+
+   *** beginning determination of stencils for fringe points of mesh            1  ***
+
+     there are            0  fringe points due to hole            1
+
+     summary of search routine results for mesh            1  stencils:
+
+                  0  fringe points of mesh            1  are interpolated from mesh            2
+
+     updating pointers for mesh            1
+       nsets(m1),m1=            1           2
+       ibpts,ipntr(m1,n),npntr(m1,n)=            0           1           0
+       m,m1,mhbs(m,m1)=            1           2           1
+
+
+   *** beginning determination of stencils for boundary points of mesh            2  ***
+
+     creating outer boundary for mesh            2  using            1  coordinate surfaces 
+       coordinate surface number            1
+       ......jo1,jo2,ko1,ko2,lo1,lo2 =            1           6           6           7           1           1
+       extrapolated position of boundary at k=kdim boundary for            6  points
+
+     there are           12  boundary points in mesh            2  for which
+     stencils must be determined
+
+     summary of search routine results for mesh            2  stencils:
+
+                 12  boundary points of mesh            2  are interpolated from mesh            1
+
+     updating pointers for mesh            2
+       nsets(m1),m1=            1           1
+       ibpts,ipntr(m1,n),npntr(m1,n)=           12           1          12
+       m,m1,mobs(m,m1)=            2           1           1
+
+   *** beginning diagnostic checks of interpolation/extrapolation stencils ***
+
+     checking for four types of illegal transfer of information:
+     1. fringe points receive data from hole/fringe points
+     2. fringe points receive data from boundary points
+     3. boundary points receive data from hole/fringe points
+     4. boundary pts receive data from boundary points
+
+     checking stencils for mesh            1
+       checking stencils of fringe points
+         1. not applicable, no hole/fringe pts in mesh            2
+         2.            0  fringe pts in mesh            1  receive data from boundary pts in mesh            2
+       checking stencils of boundary points
+         there are no boundary pts in mesh            1  to check
+
+     checking stencils for mesh            2
+       checking stencils of fringe points
+         there are no fringe pts in mesh            2  to check
+       checking stencils of boundary points
+         3.            0  bndry pts in mesh            2  receive data from hole/fringe pts in mesh            1
+         4. not applicable, no boundary pts in mesh            1
+
+     checking for mismatch between cell centers of fringe and boundary pts
+     as calculated from 1) input meshes and 2) data transfer stencils
+
+                  0  cell centers of mesh            1  calculated using the transfer stencils
+       differ by more than           10  percent from the actual cell centers
+       the maximum deviation    0.0000000000000000       percent occurs at            1           1           1
+
+                  0  cell centers of mesh            2  calculated using the transfer stencils
+       differ by more than           10  percent from the actual cell centers
+       the maximum deviation    0.0000000000000000       percent occurs at            1           1           1
+
+   *** summary of maggie preprocessor ***
+
+     there are            2  grids in the composite mesh
+     with a total of          100  points
+     of which:            0  are hole points
+                          0  are fringe points
+
+       writing connection data for CFL3D to  unit 2 for mesh            1
+         ibpnts,iipnts,iieptr,iisptr            0          12          12           1
+         ...reordering.......interior pts =            0
+         .....iseq,ibpnts =            0           0
+         intpts =            0           0           0           0
+
+       writing connection data for CFL3D to  unit 2 for mesh            2
+         ibpnts,iipnts,iieptr,iisptr           12           0          12          13
+         ...reordering.......interior pts =            6
+         .....iseq,ibpnts =            6          12
+         ...reordering.......QJ0 pts =            0
+         ......iseq,ibpnts =            6          12
+         ...reordering.......QK0 pts =            6
+         ......iseq,ibpnts =           12          12
+         intpts =            6           0           6           0
+
+     minimum dimension for parameter IITOT in CFL3D (module RHS):           12
+
+
+                  time in seconds
+
+   node      user    system     total    wall clock
+      0      0.00      0.00      0.00        0.00
+ ------------------------------------
+ total:      0.00      0.00      0.00
+
+ total run (wall) time =    0 hours    0 minutes    0 seconds
