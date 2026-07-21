@@ -6,6 +6,7 @@ tools_cgns/gen_delta_cgns
 # tool binaries + run sandboxes (built by tools/*/build_verify.sh)
 tools/ronnie/cpp/ronnie
 tools/maggie/cpp/maggie
+tools/splitter/cpp/splitter
 tools/*/run/
 
 # editor / OS

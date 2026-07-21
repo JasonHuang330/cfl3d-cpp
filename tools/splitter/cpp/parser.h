@@ -1,0 +1,17 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright 2001 United States Government as represented by the
+// Administrator of the National Aeronautics and Space Administration.
+// Copyright 2026 Jason Huang and cfl3d-cpp contributors (C++ translation).
+// Licensed under the Apache License, Version 2.0 (see the LICENSE file).
+//
+#pragma once
+#include "runtime/fortran_array.h"
+#include "runtime/common_blocks.h"
+#include <complex>
+#include <cstdint>
+
+namespace parser_ns {
+
+void parser(char (&inpstr)[210], int& npos, int& lc1, int& lc2, int& lcl, int& iflg);
+
+} // namespace parser_ns

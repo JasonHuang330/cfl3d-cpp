@@ -1,0 +1,4873 @@
+{
+  "generated_by": "f2cpp.static.common_mapper",
+  "default_real_bytes": 4,
+  "files_scanned": 28,
+  "stats": {
+    "blocks": 69,
+    "unique": 68,
+    "prefix": 0,
+    "rename": 0,
+    "conflict": 1,
+    "storage_sensitive": 0,
+    "needs_arbitration": 1
+  },
+  "hazards": [],
+  "blocks_detail": {
+    "alphait": {
+      "struct": "CommonAlphait",
+      "instance": "cmn_alphait",
+      "classification": "conflict",
+      "resolved_by": "needs_arbitration",
+      "needs_arbitration": true,
+      "storage_sensitive": false,
+      "sites": 3,
+      "variants": 2,
+      "files": [
+        "code/cfl3d_to_tlns3d.F",
+        "code/readkey.F",
+        "code/tlns3d_to_cfl3d.F"
+      ],
+      "total_bytes": 36,
+      "renames": {},
+      "notes": [
+        "2 incompatible layouts; may belong to different programs (check linkage) or need manual unification",
+        "arbitration: deferred — Genuine structural conflict: variant 0 (cfl3d_to_tlns3d.F, tlns3d_to_cfl3d.F) starts with cltarg:real at offset 0, while variant 1 (readkey.F) starts with ialphit:integer at offset 0 — incompatible at every position. All three files are linked into the same executable (main.F calls sizer→readkey and splitter→cfl3d_to_tlns3d/tlns3d_to_cfl3d). Members rlxalph and dalpha appear only in readkey.F; resupdt, cltol, dcldal, alphalast, nttlast appear only in the other two. Cannot be resolved by renaming; requires manual source-level unification of the two layouts."
+      ],
+      "variant_details": [
+        {
+          "members": [
+            {
+              "name": "cltarg",
+              "ftype": "real",
+              "dims": []
+            },
+            {
+              "name": "resupdt",
+              "ftype": "real",
+              "dims": []
+            },
+            {
+              "name": "cltol",
+              "ftype": "real",
+              "dims": []
+            },
+            {
+              "name": "dalim",
+              "ftype": "real",
+              "dims": []
+            },
+            {
+              "name": "dcldal",
+              "ftype": "real",
+              "dims": []
+            },
+            {
+              "name": "alphalast",
+              "ftype": "real",
+              "dims": []
+            },
+            {
+              "name": "ialphit",
+              "ftype": "integer",
+              "dims": []
+            },
+            {
+              "name": "nttlast",
+              "ftype": "integer",
+              "dims": []
+            },
+            {
+              "name": "icycupdt",
+              "ftype": "integer",
+              "dims": []
+            }
+          ],
+          "files": [
+            "code/cfl3d_to_tlns3d.F",
+            "code/tlns3d_to_cfl3d.F"
+          ],
+          "sites": 2
+        },
+        {
+          "members": [
+            {
+              "name": "ialphit",
+              "ftype": "integer",
+              "dims": []
+            },
+            {
+              "name": "cltarg",
+              "ftype": "real",
+              "dims": []
+            },
+            {
+              "name": "rlxalph",
+              "ftype": "real",
+              "dims": []
+            },
+            {
+              "name": "dalim",
+              "ftype": "real",
+              "dims": []
+            },
+            {
+              "name": "dalpha",
+              "ftype": "real",
+              "dims": []
+            },
+            {
+              "name": "icycupdt",
+              "ftype": "integer",
+              "dims": []
+            }
+          ],
+          "files": [
+            "code/readkey.F"
+          ],
+          "sites": 1
+        }
+      ],
+      "members": [
+        {
+          "fortran": "cltarg",
+          "cpp": "cltarg",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "resupdt",
+          "cpp": "resupdt",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "cltol",
+          "cpp": "cltol",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "dalim",
+          "cpp": "dalim",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "dcldal",
+          "cpp": "dcldal",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "alphalast",
+          "cpp": "alphalast",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        },
+        {
+          "fortran": "ialphit",
+          "cpp": "ialphit",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 24
+        },
+        {
+          "fortran": "nttlast",
+          "cpp": "nttlast",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 28
+        },
+        {
+          "fortran": "icycupdt",
+          "cpp": "icycupdt",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 32
+        }
+      ]
+    },
+    "avgdata": {
+      "struct": "CommonAvgdata",
+      "instance": "cmn_avgdata",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 24,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "xnumavg",
+          "cpp": "xnumavg",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "iteravg",
+          "cpp": "iteravg",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "xnumavg2",
+          "cpp": "xnumavg2",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "ipertavg",
+          "cpp": "ipertavg",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "iclcd",
+          "cpp": "iclcd",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "isubit_r",
+          "cpp": "isubit_r",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        }
+      ]
+    },
+    "axisym": {
+      "struct": "CommonAxisym",
+      "instance": "cmn_axisym",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 16,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "iaxi2plane",
+          "cpp": "iaxi2plane",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "iaxi2planeturb",
+          "cpp": "iaxi2planeturb",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "istrongturbdis",
+          "cpp": "istrongturbdis",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "iforcev0",
+          "cpp": "iforcev0",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        }
+      ]
+    },
+    "bin": {
+      "struct": "CommonBin",
+      "instance": "cmn_bin",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 16,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "ibin",
+          "cpp": "ibin",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "iblnk",
+          "cpp": "iblnk",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "iblnkfr",
+          "cpp": "iblnkfr",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "ip3dgrad",
+          "cpp": "ip3dgrad",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        }
+      ]
+    },
+    "block": {
+      "struct": "CommonBlock",
+      "instance": "cmn_block",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 2,
+      "variants": 1,
+      "files": [
+        "code/mapin.F",
+        "code/mapsplt.F"
+      ],
+      "total_bytes": 4,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "nbltop",
+          "cpp": "nbltop",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    },
+    "cflfiles": {
+      "struct": "CommonCflfiles",
+      "instance": "cmn_cflfiles",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 3,
+      "variants": 1,
+      "files": [
+        "code/cfl3d_to_tlns3d.F",
+        "code/splitter.F",
+        "code/tlns3d_to_cfl3d.F"
+      ],
+      "total_bytes": 1520,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "gridin",
+          "cpp": "gridin",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 0
+        },
+        {
+          "fortran": "plt3dg",
+          "cpp": "plt3dg",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 80
+        },
+        {
+          "fortran": "plt3dq",
+          "cpp": "plt3dq",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 160
+        },
+        {
+          "fortran": "output",
+          "cpp": "output",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 240
+        },
+        {
+          "fortran": "resid",
+          "cpp": "resid",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 320
+        },
+        {
+          "fortran": "turbres",
+          "cpp": "turbres",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 400
+        },
+        {
+          "fortran": "blomx",
+          "cpp": "blomx",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 480
+        },
+        {
+          "fortran": "output2",
+          "cpp": "output2",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 560
+        },
+        {
+          "fortran": "printout",
+          "cpp": "printout",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 640
+        },
+        {
+          "fortran": "pplunge",
+          "cpp": "pplunge",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 720
+        },
+        {
+          "fortran": "ovrlap",
+          "cpp": "ovrlap",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 800
+        },
+        {
+          "fortran": "patch",
+          "cpp": "patch",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 880
+        },
+        {
+          "fortran": "restrt",
+          "cpp": "restrt",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 960
+        },
+        {
+          "fortran": "gridout",
+          "cpp": "gridout",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 1040
+        },
+        {
+          "fortran": "sdgridin",
+          "cpp": "sdgridin",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 1120
+        },
+        {
+          "fortran": "sdgridout",
+          "cpp": "sdgridout",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 1200
+        },
+        {
+          "fortran": "dovrlap",
+          "cpp": "dovrlap",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 1280
+        },
+        {
+          "fortran": "dpatch",
+          "cpp": "dpatch",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 1360
+        },
+        {
+          "fortran": "dresid",
+          "cpp": "dresid",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 1440
+        }
+      ]
+    },
+    "cgns": {
+      "struct": "CommonCgns",
+      "instance": "cmn_cgns",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 32,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "icgns",
+          "cpp": "icgns",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "iccg",
+          "cpp": "iccg",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "ibase",
+          "cpp": "ibase",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "nzones",
+          "cpp": "nzones",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "nsoluse",
+          "cpp": "nsoluse",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "irind",
+          "cpp": "irind",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        },
+        {
+          "fortran": "jrind",
+          "cpp": "jrind",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 24
+        },
+        {
+          "fortran": "krind",
+          "cpp": "krind",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 28
+        }
+      ]
+    },
+    "chk1": {
+      "struct": "CommonChk1",
+      "instance": "cmn_chk1",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 2,
+      "variants": 1,
+      "files": [
+        "code/splitter.F",
+        "code/tlns3d_to_cfl3d.F"
+      ],
+      "total_bytes": 4,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "ncgmax",
+          "cpp": "ncgmax",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    },
+    "complx": {
+      "struct": "CommonComplx",
+      "instance": "cmn_complx",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 40,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "xmach_img",
+          "cpp": "xmach_img",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "alpha_img",
+          "cpp": "alpha_img",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "beta_img",
+          "cpp": "beta_img",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "reue_img",
+          "cpp": "reue_img",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "tinf_img",
+          "cpp": "tinf_img",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "geom_img",
+          "cpp": "geom_img",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        },
+        {
+          "fortran": "surf_img",
+          "cpp": "surf_img",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 24
+        },
+        {
+          "fortran": "xrotrate_img",
+          "cpp": "xrotrate_img",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 28
+        },
+        {
+          "fortran": "yrotrate_img",
+          "cpp": "yrotrate_img",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 32
+        },
+        {
+          "fortran": "zrotrate_img",
+          "cpp": "zrotrate_img",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 36
+        }
+      ]
+    },
+    "constit": {
+      "struct": "CommonConstit",
+      "instance": "cmn_constit",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 28,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "i_nonlin",
+          "cpp": "i_nonlin",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "c_nonlin",
+          "cpp": "c_nonlin",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "snonlin_lim",
+          "cpp": "snonlin_lim",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "i_tauijs",
+          "cpp": "i_tauijs",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "i_qcr2000",
+          "cpp": "i_qcr2000",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "i_qcr2013",
+          "cpp": "i_qcr2013",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        },
+        {
+          "fortran": "i_qcr2013v",
+          "cpp": "i_qcr2013v",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 24
+        }
+      ]
+    },
+    "curvat": {
+      "struct": "CommonCurvat",
+      "instance": "cmn_curvat",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 32,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "isarc2d",
+          "cpp": "isarc2d",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "sarccr3",
+          "cpp": "sarccr3",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "ieasmcc2d",
+          "cpp": "ieasmcc2d",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "isstrc",
+          "cpp": "isstrc",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "sstrc_crc",
+          "cpp": "sstrc_crc",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "isar",
+          "cpp": "isar",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        },
+        {
+          "fortran": "crot",
+          "cpp": "crot",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 24
+        },
+        {
+          "fortran": "isarc3d",
+          "cpp": "isarc3d",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 28
+        }
+      ]
+    },
+    "deformz": {
+      "struct": "CommonDeformz",
+      "instance": "cmn_deformz",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 40,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "beta1",
+          "cpp": "beta1",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "beta2",
+          "cpp": "beta2",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "alpha1",
+          "cpp": "alpha1",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "alpha2",
+          "cpp": "alpha2",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "isktyp",
+          "cpp": "isktyp",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "negvol",
+          "cpp": "negvol",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        },
+        {
+          "fortran": "meshdef",
+          "cpp": "meshdef",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 24
+        },
+        {
+          "fortran": "nsprgit",
+          "cpp": "nsprgit",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 28
+        },
+        {
+          "fortran": "ndgrd",
+          "cpp": "ndgrd",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 32
+        },
+        {
+          "fortran": "ndwrt",
+          "cpp": "ndwrt",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 36
+        }
+      ]
+    },
+    "des": {
+      "struct": "CommonDes",
+      "instance": "cmn_des",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 12,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "cdes",
+          "cpp": "cdes",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "ides",
+          "cpp": "ides",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "cddes",
+          "cpp": "cddes",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        }
+      ]
+    },
+    "easmlim": {
+      "struct": "CommonEasmlim",
+      "instance": "cmn_easmlim",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 4,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "cmulim",
+          "cpp": "cmulim",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    },
+    "easmv": {
+      "struct": "CommonEasmv",
+      "instance": "cmn_easmv",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 36,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "c10",
+          "cpp": "c10",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "c11",
+          "cpp": "c11",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "c2",
+          "cpp": "c2",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "c3",
+          "cpp": "c3",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "c4",
+          "cpp": "c4",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "c5",
+          "cpp": "c5",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        },
+        {
+          "fortran": "sigk1",
+          "cpp": "sigk1",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 24
+        },
+        {
+          "fortran": "cmuc1",
+          "cpp": "cmuc1",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 28
+        },
+        {
+          "fortran": "ieasm_type",
+          "cpp": "ieasm_type",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 32
+        }
+      ]
+    },
+    "elastic_ss": {
+      "struct": "CommonElasticSs",
+      "instance": "cmn_elastic_ss",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 4,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "idef_ss",
+          "cpp": "idef_ss",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    },
+    "entfix": {
+      "struct": "CommonEntfix",
+      "instance": "cmn_entfix",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 8,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "epsa_l",
+          "cpp": "epsa_l",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "epsa_r",
+          "cpp": "epsa_r",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        }
+      ]
+    },
+    "filenam2": {
+      "struct": "CommonFilenam2",
+      "instance": "cmn_filenam2",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 1205,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "avgq2",
+          "cpp": "avgq2",
+          "ftype": "character*241",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 241,
+          "offset": 0
+        },
+        {
+          "fortran": "avgq2pert",
+          "cpp": "avgq2pert",
+          "ftype": "character*241",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 241,
+          "offset": 241
+        },
+        {
+          "fortran": "clcds",
+          "cpp": "clcds",
+          "ftype": "character*241",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 241,
+          "offset": 482
+        },
+        {
+          "fortran": "clcdp",
+          "cpp": "clcdp",
+          "ftype": "character*241",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 241,
+          "offset": 723
+        },
+        {
+          "fortran": "output_dir",
+          "cpp": "output_dir",
+          "ftype": "character*241",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 241,
+          "offset": 964
+        }
+      ]
+    },
+    "fluid": {
+      "struct": "CommonFluid",
+      "instance": "cmn_fluid",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 24,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "gamma",
+          "cpp": "gamma",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "gm1",
+          "cpp": "gm1",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "gp1",
+          "cpp": "gp1",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "gm1g",
+          "cpp": "gm1g",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "gp1g",
+          "cpp": "gp1g",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "ggm1",
+          "cpp": "ggm1",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        }
+      ]
+    },
+    "fluid2": {
+      "struct": "CommonFluid2",
+      "instance": "cmn_fluid2",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 12,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "pr",
+          "cpp": "pr",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "prt",
+          "cpp": "prt",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "cbar",
+          "cpp": "cbar",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        }
+      ]
+    },
+    "fullns": {
+      "struct": "CommonFullns",
+      "instance": "cmn_fullns",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 4,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "ifullns",
+          "cpp": "ifullns",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    },
+    "ghost": {
+      "struct": "CommonGhost",
+      "instance": "cmn_ghost",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 8,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "irghost",
+          "cpp": "irghost",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "iwghost",
+          "cpp": "iwghost",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        }
+      ]
+    },
+    "ginfo2": {
+      "struct": "CommonGinfo2",
+      "instance": "cmn_ginfo2",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 32,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "lq2avg",
+          "cpp": "lq2avg",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "iskip_blocks",
+          "cpp": "iskip_blocks",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "inc_2d",
+          "cpp": "inc_2d",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [
+            "3"
+          ],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "inc_coarse",
+          "cpp": "inc_coarse",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [
+            "3"
+          ],
+          "char_len": null,
+          "offset": 20
+        }
+      ]
+    },
+    "grdinfo": {
+      "struct": "CommonGrdinfo",
+      "instance": "cmn_grdinfo",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 2,
+      "variants": 1,
+      "files": [
+        "code/cfl3d_to_tlns3d.F",
+        "code/splitter.F"
+      ],
+      "total_bytes": 4,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "nbloc",
+          "cpp": "nbloc",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    },
+    "gridtrans": {
+      "struct": "CommonGridtrans",
+      "instance": "cmn_gridtrans",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 4,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "roll_angle",
+          "cpp": "roll_angle",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    },
+    "info": {
+      "struct": "CommonInfo",
+      "instance": "cmn_info",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 3,
+      "variants": 1,
+      "files": [
+        "code/cfl3d_to_tlns3d.F",
+        "code/readkey.F",
+        "code/tlns3d_to_cfl3d.F"
+      ],
+      "total_bytes": 276,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "title",
+          "cpp": "title",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [
+            "20"
+          ],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "rkap",
+          "cpp": "rkap",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [
+            "3"
+          ],
+          "char_len": null,
+          "offset": 80
+        },
+        {
+          "fortran": "xmach",
+          "cpp": "xmach",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 92
+        },
+        {
+          "fortran": "alpha",
+          "cpp": "alpha",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 96
+        },
+        {
+          "fortran": "beta",
+          "cpp": "beta",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 100
+        },
+        {
+          "fortran": "dt",
+          "cpp": "dt",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 104
+        },
+        {
+          "fortran": "fmax",
+          "cpp": "fmax",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 108
+        },
+        {
+          "fortran": "nit",
+          "cpp": "nit",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 112
+        },
+        {
+          "fortran": "ntt",
+          "cpp": "ntt",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 116
+        },
+        {
+          "fortran": "idiag",
+          "cpp": "idiag",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [
+            "3"
+          ],
+          "char_len": null,
+          "offset": 120
+        },
+        {
+          "fortran": "nitfo",
+          "cpp": "nitfo",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 132
+        },
+        {
+          "fortran": "iflagts",
+          "cpp": "iflagts",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 136
+        },
+        {
+          "fortran": "iflim",
+          "cpp": "iflim",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [
+            "3"
+          ],
+          "char_len": null,
+          "offset": 140
+        },
+        {
+          "fortran": "nres",
+          "cpp": "nres",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 152
+        },
+        {
+          "fortran": "levelb",
+          "cpp": "levelb",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [
+            "5"
+          ],
+          "char_len": null,
+          "offset": 156
+        },
+        {
+          "fortran": "mgflag",
+          "cpp": "mgflag",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 176
+        },
+        {
+          "fortran": "iconsf",
+          "cpp": "iconsf",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 180
+        },
+        {
+          "fortran": "mseq",
+          "cpp": "mseq",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 184
+        },
+        {
+          "fortran": "ncyc1",
+          "cpp": "ncyc1",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [
+            "5"
+          ],
+          "char_len": null,
+          "offset": 188
+        },
+        {
+          "fortran": "levelt",
+          "cpp": "levelt",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [
+            "5"
+          ],
+          "char_len": null,
+          "offset": 208
+        },
+        {
+          "fortran": "nitfo1",
+          "cpp": "nitfo1",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [
+            "5"
+          ],
+          "char_len": null,
+          "offset": 228
+        },
+        {
+          "fortran": "ngam",
+          "cpp": "ngam",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 248
+        },
+        {
+          "fortran": "nsm",
+          "cpp": "nsm",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [
+            "5"
+          ],
+          "char_len": null,
+          "offset": 252
+        },
+        {
+          "fortran": "iipv",
+          "cpp": "iipv",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 272
+        }
+      ]
+    },
+    "info2": {
+      "struct": "CommonInfo2",
+      "instance": "cmn_info2",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 2,
+      "variants": 1,
+      "files": [
+        "code/cfl3d_to_tlns3d.F",
+        "code/tlns3d_to_cfl3d.F"
+      ],
+      "total_bytes": 52,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "tinf",
+          "cpp": "tinf",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "reue",
+          "cpp": "reue",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "c2spe",
+          "cpp": "c2spe",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "bref",
+          "cpp": "bref",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "cref",
+          "cpp": "cref",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "sref",
+          "cpp": "sref",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        },
+        {
+          "fortran": "xmc",
+          "cpp": "xmc",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 24
+        },
+        {
+          "fortran": "ymc",
+          "cpp": "ymc",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 28
+        },
+        {
+          "fortran": "zmc",
+          "cpp": "zmc",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 32
+        },
+        {
+          "fortran": "rfreq",
+          "cpp": "rfreq",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 36
+        },
+        {
+          "fortran": "alphau",
+          "cpp": "alphau",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 40
+        },
+        {
+          "fortran": "cloc",
+          "cpp": "cloc",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 44
+        },
+        {
+          "fortran": "cfltau",
+          "cpp": "cfltau",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 48
+        }
+      ]
+    },
+    "info3": {
+      "struct": "CommonInfo3",
+      "instance": "cmn_info3",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 3,
+      "variants": 1,
+      "files": [
+        "code/cfl3d_to_tlns3d.F",
+        "code/splitter.F",
+        "code/tlns3d_to_cfl3d.F"
+      ],
+      "total_bytes": 212,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "ncg",
+          "cpp": "ncg",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "isnd",
+          "cpp": "isnd",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "ialph",
+          "cpp": "ialph",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "irest",
+          "cpp": "irest",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "iunst",
+          "cpp": "iunst",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "ntstep",
+          "cpp": "ntstep",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        },
+        {
+          "fortran": "ita",
+          "cpp": "ita",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 24
+        },
+        {
+          "fortran": "ihstry",
+          "cpp": "ihstry",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 28
+        },
+        {
+          "fortran": "nplot3d",
+          "cpp": "nplot3d",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 32
+        },
+        {
+          "fortran": "nprint",
+          "cpp": "nprint",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 36
+        },
+        {
+          "fortran": "nwrest",
+          "cpp": "nwrest",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 40
+        },
+        {
+          "fortran": "ichk",
+          "cpp": "ichk",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 44
+        },
+        {
+          "fortran": "i2d",
+          "cpp": "i2d",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 48
+        },
+        {
+          "fortran": "mglev",
+          "cpp": "mglev",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [
+            "5"
+          ],
+          "char_len": null,
+          "offset": 52
+        },
+        {
+          "fortran": "nem",
+          "cpp": "nem",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [
+            "5"
+          ],
+          "char_len": null,
+          "offset": 72
+        },
+        {
+          "fortran": "mitl",
+          "cpp": "mitl",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [
+            "5",
+            "5"
+          ],
+          "char_len": null,
+          "offset": 92
+        },
+        {
+          "fortran": "mtt",
+          "cpp": "mtt",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 192
+        },
+        {
+          "fortran": "ndv",
+          "cpp": "ndv",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 196
+        },
+        {
+          "fortran": "isdform",
+          "cpp": "isdform",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 200
+        },
+        {
+          "fortran": "ip3dgrd",
+          "cpp": "ip3dgrd",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 204
+        },
+        {
+          "fortran": "iplt3dtyp",
+          "cpp": "iplt3dtyp",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 208
+        }
+      ]
+    },
+    "initfac": {
+      "struct": "CommonInitfac",
+      "instance": "cmn_initfac",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 4,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "scal_ic",
+          "cpp": "scal_ic",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    },
+    "is_blockbc": {
+      "struct": "CommonIsBlockbc",
+      "instance": "cmn_is_blockbc",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 44,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "is_blk",
+          "cpp": "is_blk",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [
+            "5"
+          ],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "ie_blk",
+          "cpp": "ie_blk",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [
+            "5"
+          ],
+          "char_len": null,
+          "offset": 20
+        },
+        {
+          "fortran": "ivolint",
+          "cpp": "ivolint",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 40
+        }
+      ]
+    },
+    "is_patch": {
+      "struct": "CommonIsPatch",
+      "instance": "cmn_is_patch",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 44,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "is_pat",
+          "cpp": "is_pat",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [
+            "5"
+          ],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "ie_pat",
+          "cpp": "ie_pat",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [
+            "5"
+          ],
+          "char_len": null,
+          "offset": 20
+        },
+        {
+          "fortran": "ipatch1st",
+          "cpp": "ipatch1st",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 40
+        }
+      ]
+    },
+    "iupdate": {
+      "struct": "CommonIupdate",
+      "instance": "cmn_iupdate",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 4,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "iupdatemean",
+          "cpp": "iupdatemean",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    },
+    "ivals": {
+      "struct": "CommonIvals",
+      "instance": "cmn_ivals",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 88,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "p0",
+          "cpp": "p0",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "rho0",
+          "cpp": "rho0",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "c0",
+          "cpp": "c0",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "u0",
+          "cpp": "u0",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "v0",
+          "cpp": "v0",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "w0",
+          "cpp": "w0",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        },
+        {
+          "fortran": "et0",
+          "cpp": "et0",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 24
+        },
+        {
+          "fortran": "h0",
+          "cpp": "h0",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 28
+        },
+        {
+          "fortran": "pt0",
+          "cpp": "pt0",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 32
+        },
+        {
+          "fortran": "rhot0",
+          "cpp": "rhot0",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 36
+        },
+        {
+          "fortran": "qiv",
+          "cpp": "qiv",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [
+            "5"
+          ],
+          "char_len": null,
+          "offset": 40
+        },
+        {
+          "fortran": "tur10",
+          "cpp": "tur10",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [
+            "7"
+          ],
+          "char_len": null,
+          "offset": 60
+        }
+      ]
+    },
+    "key": {
+      "struct": "CommonKey",
+      "instance": "cmn_key",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 4,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "nkey",
+          "cpp": "nkey",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    },
+    "konew": {
+      "struct": "CommonKonew",
+      "instance": "cmn_konew",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 68,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "ikoprod",
+          "cpp": "ikoprod",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "isstdenom",
+          "cpp": "isstdenom",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "pklimterm",
+          "cpp": "pklimterm",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "ibeta8kzeta",
+          "cpp": "ibeta8kzeta",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "i_bsl",
+          "cpp": "i_bsl",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "keepambient",
+          "cpp": "keepambient",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        },
+        {
+          "fortran": "re_thetat0",
+          "cpp": "re_thetat0",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 24
+        },
+        {
+          "fortran": "i_wilcox06",
+          "cpp": "i_wilcox06",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 28
+        },
+        {
+          "fortran": "i_wilcox06_chiw",
+          "cpp": "i_wilcox06_chiw",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 32
+        },
+        {
+          "fortran": "i_turbprod_kterm",
+          "cpp": "i_turbprod_kterm",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 36
+        },
+        {
+          "fortran": "i_catris_kw",
+          "cpp": "i_catris_kw",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 40
+        },
+        {
+          "fortran": "prod2d3dtrace",
+          "cpp": "prod2d3dtrace",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 44
+        },
+        {
+          "fortran": "i_compress_correct",
+          "cpp": "i_compress_correct",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 48
+        },
+        {
+          "fortran": "isstsf",
+          "cpp": "isstsf",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 52
+        },
+        {
+          "fortran": "i_wilcox98",
+          "cpp": "i_wilcox98",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 56
+        },
+        {
+          "fortran": "i_wilcox98_chiw",
+          "cpp": "i_wilcox98_chiw",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 60
+        },
+        {
+          "fortran": "isst2003",
+          "cpp": "isst2003",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 64
+        }
+      ]
+    },
+    "lam": {
+      "struct": "CommonLam",
+      "instance": "cmn_lam",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 28,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "ilamlo",
+          "cpp": "ilamlo",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "ilamhi",
+          "cpp": "ilamhi",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "jlamlo",
+          "cpp": "jlamlo",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "jlamhi",
+          "cpp": "jlamhi",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "klamlo",
+          "cpp": "klamlo",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "klamhi",
+          "cpp": "klamhi",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        },
+        {
+          "fortran": "i_lam_forcezero",
+          "cpp": "i_lam_forcezero",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 24
+        }
+      ]
+    },
+    "lesinfo": {
+      "struct": "CommonLesinfo",
+      "instance": "cmn_lesinfo",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 20,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "les_model",
+          "cpp": "les_model",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "les_wallscale",
+          "cpp": "les_wallscale",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "cs_smagorinsky",
+          "cpp": "cs_smagorinsky",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "cs_wale",
+          "cpp": "cs_wale",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "cs_vreman",
+          "cpp": "cs_vreman",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        }
+      ]
+    },
+    "maxiv": {
+      "struct": "CommonMaxiv",
+      "instance": "cmn_maxiv",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 4,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "ivmx",
+          "cpp": "ivmx",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    },
+    "memory": {
+      "struct": "CommonMemory",
+      "instance": "cmn_memory",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 8,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "memadd",
+          "cpp": "memadd",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "memaddi",
+          "cpp": "memaddi",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        }
+      ]
+    },
+    "memry": {
+      "struct": "CommonMemry",
+      "instance": "cmn_memry",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 4,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "lowmem_ux",
+          "cpp": "lowmem_ux",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    },
+    "mgv": {
+      "struct": "CommonMgv",
+      "instance": "cmn_mgv",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 2,
+      "variants": 1,
+      "files": [
+        "code/cfl3d_to_tlns3d.F",
+        "code/tlns3d_to_cfl3d.F"
+      ],
+      "total_bytes": 32,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "epsssc",
+          "cpp": "epsssc",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [
+            "3"
+          ],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "epsssr",
+          "cpp": "epsssr",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [
+            "3"
+          ],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "issc",
+          "cpp": "issc",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 24
+        },
+        {
+          "fortran": "issr",
+          "cpp": "issr",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 28
+        }
+      ]
+    },
+    "mms": {
+      "struct": "CommonMms",
+      "instance": "cmn_mms",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 12,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "iexact_trunc",
+          "cpp": "iexact_trunc",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "iexact_disc",
+          "cpp": "iexact_disc",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "iexact_ring",
+          "cpp": "iexact_ring",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        }
+      ]
+    },
+    "moov": {
+      "struct": "CommonMoov",
+      "instance": "cmn_moov",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 24,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "movie",
+          "cpp": "movie",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "nframes",
+          "cpp": "nframes",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "icall1",
+          "cpp": "icall1",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "lhdr",
+          "cpp": "lhdr",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "icoarsemovie",
+          "cpp": "icoarsemovie",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "i2dmovie",
+          "cpp": "i2dmovie",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        }
+      ]
+    },
+    "mydist2": {
+      "struct": "CommonMydist2",
+      "instance": "cmn_mydist2",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/umalloc.F"
+      ],
+      "total_bytes": 16,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "nnodes",
+          "cpp": "nnodes",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "myhost",
+          "cpp": "myhost",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "myid",
+          "cpp": "myid",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "mycomm",
+          "cpp": "mycomm",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        }
+      ]
+    },
+    "noninertial": {
+      "struct": "CommonNoninertial",
+      "instance": "cmn_noninertial",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 28,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "xcentrot",
+          "cpp": "xcentrot",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "ycentrot",
+          "cpp": "ycentrot",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "zcentrot",
+          "cpp": "zcentrot",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "xrotrate",
+          "cpp": "xrotrate",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "yrotrate",
+          "cpp": "yrotrate",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "zrotrate",
+          "cpp": "zrotrate",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        },
+        {
+          "fortran": "noninflag",
+          "cpp": "noninflag",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 24
+        }
+      ]
+    },
+    "oldbl": {
+      "struct": "CommonOldbl",
+      "instance": "cmn_oldbl",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 3,
+      "variants": 1,
+      "files": [
+        "code/mapblk.F",
+        "code/mapin.F",
+        "code/mapout.F"
+      ],
+      "total_bytes": 4,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "noldbl",
+          "cpp": "noldbl",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    },
+    "plot3dtyp": {
+      "struct": "CommonPlot3dtyp",
+      "instance": "cmn_plot3dtyp",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 4,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "ifunct",
+          "cpp": "ifunct",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    },
+    "precon1": {
+      "struct": "CommonPrecon1",
+      "instance": "cmn_precon1",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 2,
+      "variants": 1,
+      "files": [
+        "code/cfl3d_to_tlns3d.F",
+        "code/tlns3d_to_cfl3d.F"
+      ],
+      "total_bytes": 16,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "cprec",
+          "cpp": "cprec",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "uref",
+          "cpp": "uref",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "avn",
+          "cpp": "avn",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "iprecon",
+          "cpp": "iprecon",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        }
+      ]
+    },
+    "precond": {
+      "struct": "CommonPrecond",
+      "instance": "cmn_precond",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 12,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "cprec",
+          "cpp": "cprec",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "uref",
+          "cpp": "uref",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "avn",
+          "cpp": "avn",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        }
+      ]
+    },
+    "random_input": {
+      "struct": "CommonRandomInput",
+      "instance": "cmn_random_input",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 4,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "randomize",
+          "cpp": "randomize",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    },
+    "rbstmt2": {
+      "struct": "CommonRbstmt2",
+      "instance": "cmn_rbstmt2",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 36,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "tmass",
+          "cpp": "tmass",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "yinert",
+          "cpp": "yinert",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "uinfrb",
+          "cpp": "uinfrb",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "qinfrb",
+          "cpp": "qinfrb",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "greflrb",
+          "cpp": "greflrb",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "gaccel",
+          "cpp": "gaccel",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        },
+        {
+          "fortran": "crefrb",
+          "cpp": "crefrb",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 24
+        },
+        {
+          "fortran": "xtmref",
+          "cpp": "xtmref",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 28
+        },
+        {
+          "fortran": "areat",
+          "cpp": "areat",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 32
+        }
+      ]
+    },
+    "reystressmodel": {
+      "struct": "CommonReystressmodel",
+      "instance": "cmn_reystressmodel",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 12,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "issglrrw2012",
+          "cpp": "issglrrw2012",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "i_sas_rsm",
+          "cpp": "i_sas_rsm",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "i_yapterm",
+          "cpp": "i_yapterm",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        }
+      ]
+    },
+    "rigidbody": {
+      "struct": "CommonRigidbody",
+      "instance": "cmn_rigidbody",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 8,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "irigb",
+          "cpp": "irigb",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "irbtrim",
+          "cpp": "irbtrim",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        }
+      ]
+    },
+    "ron": {
+      "struct": "CommonRon",
+      "instance": "cmn_ron",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 2,
+      "variants": 1,
+      "files": [
+        "code/cfl3d_to_tlns3d.F",
+        "code/tlns3d_to_cfl3d.F"
+      ],
+      "total_bytes": 80,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "titleron",
+          "cpp": "titleron",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [
+            "20"
+          ],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    },
+    "ronfiles": {
+      "struct": "CommonRonfiles",
+      "instance": "cmn_ronfiles",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 2,
+      "variants": 1,
+      "files": [
+        "code/cfl3d_to_tlns3d.F",
+        "code/tlns3d_to_cfl3d.F"
+      ],
+      "total_bytes": 80,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "rout",
+          "cpp": "rout",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 0
+        }
+      ]
+    },
+    "sa_options": {
+      "struct": "CommonSaOptions",
+      "instance": "cmn_sa_options",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 44,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "i_saneg",
+          "cpp": "i_saneg",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "i_sanoft2",
+          "cpp": "i_sanoft2",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "sa_cw2",
+          "cpp": "sa_cw2",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "sa_cw3",
+          "cpp": "sa_cw3",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "sa_cv1",
+          "cpp": "sa_cv1",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "sa_ct3",
+          "cpp": "sa_ct3",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        },
+        {
+          "fortran": "sa_ct4",
+          "cpp": "sa_ct4",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 24
+        },
+        {
+          "fortran": "sa_cb1",
+          "cpp": "sa_cb1",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 28
+        },
+        {
+          "fortran": "sa_cb2",
+          "cpp": "sa_cb2",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 32
+        },
+        {
+          "fortran": "sa_sigma",
+          "cpp": "sa_sigma",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 36
+        },
+        {
+          "fortran": "sa_karman",
+          "cpp": "sa_karman",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 40
+        }
+      ]
+    },
+    "segment": {
+      "struct": "CommonSegment",
+      "instance": "cmn_segment",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 4,
+      "variants": 1,
+      "files": [
+        "code/mapin.F",
+        "code/mkintr.F",
+        "code/mkseg.F",
+        "code/spltsg.F"
+      ],
+      "total_bytes": 4,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "nsgtop",
+          "cpp": "nsgtop",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    },
+    "singular": {
+      "struct": "CommonSingular",
+      "instance": "cmn_singular",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 4,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "atol",
+          "cpp": "atol",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    },
+    "sminn": {
+      "struct": "CommonSminn",
+      "instance": "cmn_sminn",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 8,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "isminc",
+          "cpp": "isminc",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "ismincforce",
+          "cpp": "ismincforce",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        }
+      ]
+    },
+    "sourceterm": {
+      "struct": "CommonSourceterm",
+      "instance": "cmn_sourceterm",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 4,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "xdir_only_source",
+          "cpp": "xdir_only_source",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    },
+    "specialtop_kmax1001": {
+      "struct": "CommonSpecialtopKmax1001",
+      "instance": "cmn_specialtop_kmax1001",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 40,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "i_specialtop_kmax1001",
+          "cpp": "i_specialtop_kmax1001",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "a_specialtop_kmax1001",
+          "cpp": "a_specialtop_kmax1001",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "xc_specialtop_kmax1001",
+          "cpp": "xc_specialtop_kmax1001",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "sig_specialtop_kmax1001",
+          "cpp": "sig_specialtop_kmax1001",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "vtp_specialtop_kmax1001",
+          "cpp": "vtp_specialtop_kmax1001",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "wc_specialtop_kmax1001",
+          "cpp": "wc_specialtop_kmax1001",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        },
+        {
+          "fortran": "fac_specialtop_kmax1001",
+          "cpp": "fac_specialtop_kmax1001",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 24
+        },
+        {
+          "fortran": "cc_specialtop_kmax1001",
+          "cpp": "cc_specialtop_kmax1001",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 28
+        },
+        {
+          "fortran": "xerf_specialtop_kmax1001",
+          "cpp": "xerf_specialtop_kmax1001",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 32
+        },
+        {
+          "fortran": "sigerf_specialtop_kmax1001",
+          "cpp": "sigerf_specialtop_kmax1001",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 36
+        }
+      ]
+    },
+    "titles": {
+      "struct": "CommonTitles",
+      "instance": "cmn_titles",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 2,
+      "variants": 1,
+      "files": [
+        "code/mapin.F",
+        "code/mapout.F"
+      ],
+      "total_bytes": 240,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "title1",
+          "cpp": "title1",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 0
+        },
+        {
+          "fortran": "title2",
+          "cpp": "title2",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 80
+        },
+        {
+          "fortran": "title3",
+          "cpp": "title3",
+          "ftype": "character*80",
+          "cpp_type": "char",
+          "dims": [],
+          "char_len": 80,
+          "offset": 160
+        }
+      ]
+    },
+    "trim": {
+      "struct": "CommonTrim",
+      "instance": "cmn_trim",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 232,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "dmtrmn",
+          "cpp": "dmtrmn",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "dmtrmnm",
+          "cpp": "dmtrmnm",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "dlcln",
+          "cpp": "dlcln",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "dlclnm",
+          "cpp": "dlclnm",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "trtol",
+          "cpp": "trtol",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "cmy",
+          "cpp": "cmy",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        },
+        {
+          "fortran": "cnw",
+          "cpp": "cnw",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 24
+        },
+        {
+          "fortran": "alf0",
+          "cpp": "alf0",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 28
+        },
+        {
+          "fortran": "alf1",
+          "cpp": "alf1",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 32
+        },
+        {
+          "fortran": "dzdt",
+          "cpp": "dzdt",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 36
+        },
+        {
+          "fortran": "thtd0",
+          "cpp": "thtd0",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 40
+        },
+        {
+          "fortran": "thtd1",
+          "cpp": "thtd1",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 44
+        },
+        {
+          "fortran": "zrg0",
+          "cpp": "zrg0",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 48
+        },
+        {
+          "fortran": "zrg1",
+          "cpp": "zrg1",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 52
+        },
+        {
+          "fortran": "dtrmsmx",
+          "cpp": "dtrmsmx",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 56
+        },
+        {
+          "fortran": "dtrmsmn",
+          "cpp": "dtrmsmn",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 60
+        },
+        {
+          "fortran": "dalfmx",
+          "cpp": "dalfmx",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 64
+        },
+        {
+          "fortran": "ddtmx",
+          "cpp": "ddtmx",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 68
+        },
+        {
+          "fortran": "ddtrm0",
+          "cpp": "ddtrm0",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 72
+        },
+        {
+          "fortran": "ddtrm1",
+          "cpp": "ddtrm1",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 76
+        },
+        {
+          "fortran": "itrmt",
+          "cpp": "itrmt",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 80
+        },
+        {
+          "fortran": "itrminc",
+          "cpp": "itrminc",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 84
+        },
+        {
+          "fortran": "fp",
+          "cpp": "fp",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [
+            "4",
+            "4"
+          ],
+          "char_len": null,
+          "offset": 88
+        },
+        {
+          "fortran": "tp",
+          "cpp": "tp",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [
+            "4",
+            "4"
+          ],
+          "char_len": null,
+          "offset": 152
+        },
+        {
+          "fortran": "zlfct",
+          "cpp": "zlfct",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 216
+        },
+        {
+          "fortran": "epstr",
+          "cpp": "epstr",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 220
+        },
+        {
+          "fortran": "relax",
+          "cpp": "relax",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 224
+        },
+        {
+          "fortran": "ittrst",
+          "cpp": "ittrst",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 228
+        }
+      ]
+    },
+    "turbconv": {
+      "struct": "CommonTurbconv",
+      "instance": "cmn_turbconv",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 76,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "cflturb",
+          "cpp": "cflturb",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [
+            "7"
+          ],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "edvislim",
+          "cpp": "edvislim",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 28
+        },
+        {
+          "fortran": "iturbprod",
+          "cpp": "iturbprod",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 32
+        },
+        {
+          "fortran": "nsubturb",
+          "cpp": "nsubturb",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 36
+        },
+        {
+          "fortran": "nfreeze",
+          "cpp": "nfreeze",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 40
+        },
+        {
+          "fortran": "iwarneddy",
+          "cpp": "iwarneddy",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 44
+        },
+        {
+          "fortran": "itime2read",
+          "cpp": "itime2read",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 48
+        },
+        {
+          "fortran": "itaturb",
+          "cpp": "itaturb",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 52
+        },
+        {
+          "fortran": "tur1cut",
+          "cpp": "tur1cut",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 56
+        },
+        {
+          "fortran": "tur2cut",
+          "cpp": "tur2cut",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 60
+        },
+        {
+          "fortran": "iturbord",
+          "cpp": "iturbord",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 64
+        },
+        {
+          "fortran": "tur1cutlev",
+          "cpp": "tur1cutlev",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 68
+        },
+        {
+          "fortran": "tur2cutlev",
+          "cpp": "tur2cutlev",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 72
+        }
+      ]
+    },
+    "unit5": {
+      "struct": "CommonUnit5",
+      "instance": "cmn_unit5",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 6,
+      "variants": 1,
+      "files": [
+        "code/cfl3d_to_tlns3d.F",
+        "code/main.F",
+        "code/readkey.F",
+        "code/sizer.F",
+        "code/splitter.F",
+        "code/tlns3d_to_cfl3d.F"
+      ],
+      "total_bytes": 4,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "iunit5",
+          "cpp": "iunit5",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    },
+    "unst": {
+      "struct": "CommonUnst",
+      "instance": "cmn_unst",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 28,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "time",
+          "cpp": "time",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "cfltau",
+          "cpp": "cfltau",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "ntstep",
+          "cpp": "ntstep",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "ita",
+          "cpp": "ita",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        },
+        {
+          "fortran": "iunst",
+          "cpp": "iunst",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 16
+        },
+        {
+          "fortran": "cfltau0",
+          "cpp": "cfltau0",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 20
+        },
+        {
+          "fortran": "cfltaumax",
+          "cpp": "cfltaumax",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 24
+        }
+      ]
+    },
+    "wallvel_2034": {
+      "struct": "CommonWallvel2034",
+      "instance": "cmn_wallvel_2034",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 16,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "uub_2034",
+          "cpp": "uub_2034",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "vvb_2034",
+          "cpp": "vvb_2034",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "wwb_2034",
+          "cpp": "wwb_2034",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        },
+        {
+          "fortran": "vvb_xaxisrot2034",
+          "cpp": "vvb_xaxisrot2034",
+          "ftype": "real",
+          "cpp_type": "float",
+          "dims": [],
+          "char_len": null,
+          "offset": 12
+        }
+      ]
+    },
+    "writestuff": {
+      "struct": "CommonWritestuff",
+      "instance": "cmn_writestuff",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 1,
+      "variants": 1,
+      "files": [
+        "code/readkey.F"
+      ],
+      "total_bytes": 12,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "ifort50write",
+          "cpp": "ifort50write",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        },
+        {
+          "fortran": "j_ifort50write",
+          "cpp": "j_ifort50write",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 4
+        },
+        {
+          "fortran": "i_ifort50write",
+          "cpp": "i_ifort50write",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 8
+        }
+      ]
+    },
+    "zero": {
+      "struct": "CommonZero",
+      "instance": "cmn_zero",
+      "classification": "unique",
+      "resolved_by": "generator",
+      "needs_arbitration": false,
+      "storage_sensitive": false,
+      "sites": 2,
+      "variants": 1,
+      "files": [
+        "code/main.F",
+        "code/readkey.F"
+      ],
+      "total_bytes": 4,
+      "renames": {},
+      "notes": [],
+      "variant_details": [],
+      "members": [
+        {
+          "fortran": "iexp",
+          "cpp": "iexp",
+          "ftype": "integer",
+          "cpp_type": "int32_t",
+          "dims": [],
+          "char_len": null,
+          "offset": 0
+        }
+      ]
+    }
+  }
+}

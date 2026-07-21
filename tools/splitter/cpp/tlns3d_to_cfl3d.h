@@ -1,0 +1,17 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright 2001 United States Government as represented by the
+// Administrator of the National Aeronautics and Space Administration.
+// Copyright 2026 Jason Huang and cfl3d-cpp contributors (C++ translation).
+// Licensed under the Apache License, Version 2.0 (see the LICENSE file).
+//
+#pragma once
+#include "runtime/fortran_array.h"
+#include "runtime/common_blocks.h"
+#include <complex>
+#include <cstdint>
+
+namespace tlns3d_to_cfl3d_ns {
+
+void tlns3d_to_cfl3d(int& iform, int& iver, int& ipatch, int& ironver, int& ngrid, FortranArray1DRef<int> iln, FortranArray1DRef<int> jln, FortranArray1DRef<int> kln, int& ipar, int& nnodes, int& isd, FortranArray2DRef<int> ifrom, FortranArray2DRef<int> xif1, FortranArray2DRef<int> xif2, FortranArray2DRef<int> etf1, FortranArray2DRef<int> etf2, FortranArray1DRef<int> ito, FortranArray1DRef<int> xit1, FortranArray1DRef<int> xit2, FortranArray1DRef<int> ett1, FortranArray1DRef<int> ett2, FortranArray1DRef<int> nfb, FortranArray2DRef<int> iredundant, FortranArray1DRef<int> iconcat, FortranArray3DRef<double> xmap, int& msegn, int& mbloc, FortranArray1DRef<int> iovrlp, FortranArray1DRef<int> nseg, FortranArray3DRef<int> imap, FortranArray2DRef<int> ivisb, FortranArray2DRef<double> twotref, FortranArray1DRef<int> itrb1, FortranArray1DRef<int> itrb2, FortranArray1DRef<int> jtrb1, FortranArray1DRef<int> jtrb2, FortranArray1DRef<int> ktrb1, FortranArray1DRef<int> ktrb2, FortranArray1DRef<int> iturbb, FortranArray2DRef<double> cq, FortranArray2DRef<double> cporous, FortranArray2DRef<double> cpchamber, FortranArray2DRef<double> cradiation, FortranArray1DRef<int> llimit, FortranArray1DRef<int> iitmax, FortranArray1DRef<int> mmcxie, FortranArray1DRef<int> mmceta, FortranArray1DRef<int> iifit, FortranArray1DRef<int> iic0, FortranArray1DRef<int> iiorph, FortranArray4DRef<double> bcvali, FortranArray4DRef<double> bcvalj, FortranArray4DRef<double> bcvalk, FortranArray1DRef<int> nbci0, FortranArray1DRef<int> nbcidim, FortranArray1DRef<int> nbcj0, FortranArray1DRef<int> nbcjdim, FortranArray1DRef<int> nbck0, FortranArray1DRef<int> nbckdim, FortranArray4DRef<int> ibcinfo, FortranArray4DRef<int> jbcinfo, FortranArray4DRef<int> kbcinfo, FortranArray2DRef<int> nblk, FortranArray3DRef<int> limblk, FortranArray3DRef<int> isva, FortranArray1DRef<int> nblon, FortranArray2DRef<double> rkap0g, FortranArray1DRef<int> levelg, FortranArray1DRef<int> igridg, FortranArray2DRef<int> iflimg, FortranArray2DRef<int> ifdsg, FortranArray2DRef<int> iviscg, FortranArray1DRef<int> jdimg, FortranArray1DRef<int> kdimg, FortranArray1DRef<int> idimg, FortranArray2DRef<int> idiagg, FortranArray1DRef<int> nblcg, FortranArray2DRef<int> idegg, FortranArray1DRef<int> jsg, FortranArray1DRef<int> ksg, FortranArray1DRef<int> isg, FortranArray1DRef<int> jeg, FortranArray1DRef<int> keg, FortranArray1DRef<int> ieg, FortranArray2DRef<int> mit, FortranArray1DRef<int> ilamlog, FortranArray1DRef<int> ilamhig, FortranArray1DRef<int> jlamlog, FortranArray1DRef<int> jlamhig, FortranArray1DRef<int> klamlog, FortranArray1DRef<int> klamhig, FortranArray1DRef<int> ncgg, FortranArray1DRef<int> nblg, FortranArray1DRef<int> iemg, FortranArray1DRef<int> inewgg, FortranArray1DRef<int> iadvance, FortranArray1DRef<int> iforce, int& intmax, int& nsub1, int& msegt, int& maxseg, int& mxbli, int& nrotat, int& ntrans, double& tlref, double& rlref, int& ioflag, FortranArray1DRef<int> nou, FortranArray2DRef<char[120]> bou, int& nbuf, int& ibufdim);
+
+} // namespace tlns3d_to_cfl3d_ns

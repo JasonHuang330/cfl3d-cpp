@@ -1,0 +1,51 @@
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * *                                                               * *
+ * *        SPLITTER - CFL3D BLOCK AND INPUT FILE SPLITTER         * *
+ * *                                                               * *
+ * *   VERSION 6.7 :  Computational Fluids Lab, Mail Stop 128,     * *
+ * *                  NASA Langley Research Center, Hampton, VA    * *
+ * *                  Release Date:  February  1, 2017.            * *
+ * *                                                               * *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+ memory allocation:     2.259116 Mbytes, single precision
+
+input (unsplit) files
+  grdflat5.inp                                                
+  null                                                        
+  grdflat5.fmt                                                
+  null                                                        
+icflver   ironver   igrdfmt    isdfmt
+      5         1         0         1
+output (split) files
+  null                                                        
+  null                                                        
+  grdflat5.bin                                                
+  null                                                        
+icflver   ironver   igrdfmt    isdfmt
+      5         1         1         1
+
+converting unsplit cfl3d input file to tlns3d map file
+
+checking dimensions...
+
+reading grid...
+grid: grdflat5.fmt                                                
+
+block #   1: il=   2, jl=  65, kl=  97
+
+number of splits =   0
+  split  block  coord  index
+
+
+ new block  old block  i0  i1  j0  j1  k0  k1
+     1          1       1   2   1  65   1  97
+
+split-grid basic dimensions are multigridable to ncg =  5
+
+Input  points:    12610
+Ouput  points:    12610
+
+SPLITTING/CONVERSION COMPLETED
