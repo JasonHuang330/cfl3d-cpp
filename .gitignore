@@ -1,0 +1,16 @@
+# build artifacts
+*.o
+*.d
+main
+tools_cgns/gen_delta_cgns
+
+# editor / OS
+.DS_Store
+*.swp
+
+# run outputs (if a case is run inside the tree)
+cfl3d.out
+cfl3d.res
+cfl3d.error
+precfl3d.*
+*.cgns

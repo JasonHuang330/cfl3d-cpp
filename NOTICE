@@ -1,0 +1,24 @@
+cfl3d-cpp
+=========
+
+This product is a C++ translation of CFL3D, derived from the original
+Fortran source.
+
+Original work:
+  CFL3D — a structured-grid, cell-centered, upwind-biased, Reynolds-averaged
+  Navier-Stokes (RANS) solver.
+  Copyright 2001 United States Government as represented by the Administrator
+  of the National Aeronautics and Space Administration (NASA). All Rights Reserved.
+  Licensed under the Apache License, Version 2.0.
+  https://github.com/nasa/CFL3D
+
+Derivative work (this C++ translation):
+  Copyright 2026 Jason Huang and cfl3d-cpp contributors.
+  Produced by an automated Fortran-to-C++ pipeline, with hand fixes for
+  numerical consistency. This copyright covers only the original
+  contributions of this translation; the underlying CFL3D work remains
+  Copyright NASA (above). Distributed under the same Apache License,
+  Version 2.0 (see LICENSE).
+
+This is an independent, unofficial translation and is NOT endorsed by or
+affiliated with NASA.
